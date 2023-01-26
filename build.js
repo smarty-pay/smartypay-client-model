@@ -1,5 +1,7 @@
 const esbuild = require('esbuild');
 const { dtsPlugin } = require("esbuild-plugin-d.ts");
+const path = require("path");
+const pkg = require(path.resolve("./package.json"));
 
 async function build(){
 
@@ -14,6 +16,10 @@ async function build(){
     outfile: `dist/esbuild/index.js`,
     plugins: [
       dtsPlugin()
+    ],
+    external: [
+      ...Object.keys(pkg.dependencies || {}),
+      ...Object.keys(pkg.peerDependencies || {}),
     ]
   });
 }
