@@ -6,17 +6,13 @@
 import {AnyFunc} from './index';
 
 
-export class ListenersMap {
+export class ListenersMap<T> {
 
   private map = new Map<string, AnyFunc[]>();
   private fnKeys = new Map<AnyFunc, string[]>();
 
-  public getListeners(key: string): AnyFunc[] {
-    return [...(this.map.get(key) || [])];
-  }
-
-  public getTypedListeners<T>(key: T): AnyFunc[] {
-    return this.getListeners(key as any);
+  public getListeners(key: T): AnyFunc[] {
+    return [...(this.map.get(key as any) || [])];
   }
 
   public getListenerKeys(listener: AnyFunc): string[]{
@@ -52,24 +48,24 @@ export class ListenersMap {
   public removeListener(listener: AnyFunc){
     const keys = this.fnKeys.get(listener) || [];
     keys.forEach(key => {
-      this.removeListenerForKey(key, listener);
+      this.removeListenerForKey(key as any, listener);
     })
   }
 
-  public removeListenerForKey(key: string, listener: AnyFunc){
-    let list = this.map.get(key);
+  public removeListenerForKey(key: T, listener: AnyFunc){
+    let list = this.map.get(key as any);
     if(list){
       list = list.filter(l => l !== listener);
       if(list.length > 0){
-        this.map.set(key, list);
+        this.map.set(key as any, list);
       } else {
-        this.map.delete(key);
+        this.map.delete(key as any);
       }
     }
 
     let keys = this.fnKeys.get(listener);
     if(keys){
-      keys = keys.filter(k => k !== key);
+      keys = keys.filter(k => k !== (key as any));
       if(keys.length > 0){
         this.fnKeys.set(listener, keys);
       } else {
@@ -78,8 +74,8 @@ export class ListenersMap {
     }
   }
 
-  public removeListeners(key: string){
-    const listeners = this.map.get(key) || [];
+  public removeListeners(key: T){
+    const listeners = this.map.get(key as any) || [];
     listeners.forEach(listener => {
       this.removeListenerForKey(key, listener);
     });
