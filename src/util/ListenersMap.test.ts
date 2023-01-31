@@ -14,6 +14,44 @@ describe('ListenersMap', ()=>{
   const fn2 = ()=>{/**/};
   const fn3 = ()=>{/**/};
 
+  describe('fireEvent', ()=> {
+
+    test('should call every listener', () => {
+
+      let calls: any[] = [];
+
+      const fn1 = (...args: any[])=>{
+        calls.push('fn1');
+        if(args.length > 0){
+          calls.push([...args]);
+        }
+      };
+      const fn2 = (...args: any[])=>{
+        calls.push('fn2');
+        if(args.length > 0){
+          calls.push([...args]);
+        }
+      };
+
+      const map = new ListenersMap();
+      map.addListener(key1, fn1);
+      map.addListener(key1, fn2);
+      map.addListener(key2, fn1);
+
+      calls = [];
+      map.fireEvent(key1);
+      expect(calls).toEqual(['fn1', 'fn2']);
+
+      calls = [];
+      map.fireEvent(key1, 1, '2');
+      expect(calls).toEqual(['fn1', [1, '2'], 'fn2', [1, '2']]);
+
+      calls = [];
+      map.fireEvent(key2);
+      expect(calls).toEqual(['fn1']);
+    });
+  });
+
   describe('getListeners', ()=> {
 
     test('should return new collection', () => {

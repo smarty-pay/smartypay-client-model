@@ -86,4 +86,8 @@ export class ListenersMap<T> {
     this.fnKeys.clear();
   }
 
+  public fireEvent(key: T, ...args: any[]){
+    this.getListeners(key).forEach(l => l(...args));
+  }
+
 }

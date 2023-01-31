@@ -6,9 +6,13 @@
 import {ListenersMap} from './ListenersMap';
 import {KeysOfType} from './KeysOfType';
 
-export type AnyFunc = (...args: any[])=>void;
-
 export {
   ListenersMap,
   KeysOfType,
 };
+
+export type AnyFunc = (...args: any[])=>void;
+
+export function makeError(prefix: string, ...args: any[]){
+  return new Error(`${prefix}: ${args.join(' ')}`);
+}
