@@ -10,6 +10,7 @@ export class ListenersMap<T> {
 
   private map = new Map<string, AnyFunc[]>();
   private fnKeys = new Map<AnyFunc, string[]>();
+  public logFireEvents = false;
 
   public getListeners(key: T): AnyFunc[] {
     return [...(this.map.get(key as any) || [])];
@@ -87,6 +88,9 @@ export class ListenersMap<T> {
   }
 
   public fireEvent(key: T, ...args: any[]){
+    if(this.logFireEvents){
+      console.log('ListenersMap: fire event', key, args);
+    }
     this.getListeners(key).forEach(l => l(...args));
   }
 
