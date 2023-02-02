@@ -3,7 +3,7 @@
   @author Evgeny Dolganov <evgenij.dolganov@gmail.com>
 */
 
-import {Currency} from './model/Currency';
+import {Currency, CurrencyKeys} from './model/Currency';
 import {Network} from './model/Network';
 import {Assets, Token} from './model/tokens';
 import {Blockchain, Blockchains} from './model/blockchains';
@@ -29,6 +29,7 @@ import * as util from './util';
 
 export {
   Currency,
+  CurrencyKeys,
   Network,
   Assets,
   Token,

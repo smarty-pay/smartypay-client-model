@@ -26,6 +26,7 @@ export type SubscriptionPlanStatus = 'Draft' | 'Active' | 'Archived'
 export interface Subscription {
   contractAddress: string,
   planId: string,
+  amount: string,
   asset: Currency,
   blockchain: Network,
   customerId: string,
