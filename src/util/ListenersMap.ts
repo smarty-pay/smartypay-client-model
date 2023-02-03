@@ -3,25 +3,58 @@
   @author Evgeny Dolganov <evgenij.dolganov@gmail.com>
 */
 
-import {AnyFunc} from './index';
+export type Event = {
+  key: string,
+  data: any[],
+}
+
+export type EventListener = (event: Event)=>void;
 
 
 export class ListenersMap<T> {
 
-  private map = new Map<string, AnyFunc[]>();
-  private fnKeys = new Map<AnyFunc, string[]>();
+  private keyListeners = new Map<string, EventListener[]>();
+  private fnKeys = new Map<EventListener, string[]>();
+  private globalListeners: EventListener[] = [];
 
-  public getListeners(key: T): AnyFunc[] {
-    return [...(this.map.get(key as any) || [])];
+  public getListeners(key: T): EventListener[] {
+    return [
+      ...this.globalListeners,
+      ...(this.keyListeners.get(key as any) || []),
+    ];
   }
 
-  public getListenerKeys(listener: AnyFunc): string[]{
-    return [...(this.fnKeys.get(listener) || [])];
+  public getListenerKeys(listener: EventListener): string[] {
+    return [
+      ...(this.fnKeys.get(listener) || [])
+    ];
   }
 
-  public addListener(key: string, listener: AnyFunc){
+  public addGlobalListener(listener: EventListener){
+    // skip duplicates
+    if( ! this.isGlobalListener(listener)) {
 
-    let list = this.map.get(key);
+      this.globalListeners.push(listener);
+
+      // clear old key links, because now listener became global
+      this.getListenerKeys(listener).forEach(key => {
+        this.removeListenerForKey(key as any, listener);
+      });
+    }
+  }
+
+  public isGlobalListener(listener: EventListener){
+    return this.globalListeners.find(l => l === listener);
+  }
+
+  public addListener(key: string, listener: EventListener){
+
+    // skip duplicate from global
+    if(this.isGlobalListener(listener)){
+      return;
+    }
+
+    let list = this.keyListeners.get(key);
 
     // skip duplicate
     if( list && list.find(l => l === listener)){
@@ -29,7 +62,7 @@ export class ListenersMap<T> {
     }
     if( ! list){
       list = [];
-      this.map.set(key, list);
+      this.keyListeners.set(key, list);
     }
 
     list.push(listener);
@@ -45,21 +78,29 @@ export class ListenersMap<T> {
     }
   }
 
-  public removeListener(listener: AnyFunc){
+  public removeGlobalListener(listener: EventListener){
+    this.globalListeners = this.globalListeners.filter(l => l !== listener);
+  }
+
+  public removeListener(listener: EventListener){
+
+    this.removeGlobalListener(listener);
+
     const keys = this.fnKeys.get(listener) || [];
     keys.forEach(key => {
       this.removeListenerForKey(key as any, listener);
-    })
+    });
   }
 
-  public removeListenerForKey(key: T, listener: AnyFunc){
-    let list = this.map.get(key as any);
+  public removeListenerForKey(key: T, listener: EventListener){
+
+    let list = this.keyListeners.get(key as any);
     if(list){
       list = list.filter(l => l !== listener);
       if(list.length > 0){
-        this.map.set(key as any, list);
+        this.keyListeners.set(key as any, list);
       } else {
-        this.map.delete(key as any);
+        this.keyListeners.delete(key as any);
       }
     }
 
@@ -75,15 +116,24 @@ export class ListenersMap<T> {
   }
 
   public removeListeners(key: T){
-    const listeners = this.map.get(key as any) || [];
+    const listeners = this.keyListeners.get(key as any) || [];
     listeners.forEach(listener => {
       this.removeListenerForKey(key, listener);
     });
   }
 
   public removeAllListeners(){
-    this.map.clear();
+    this.globalListeners = [];
+    this.keyListeners.clear();
     this.fnKeys.clear();
+  }
+
+  public fireEvent(key: T, ...args: any[]){
+    const event: Event = {
+      key: key as any,
+      data: args
+    }
+    this.getListeners(key).forEach(l => l(event));
   }
 
 }

@@ -3,7 +3,7 @@
   @author Evgeny Dolganov <evgenij.dolganov@gmail.com>
 */
 
-import {Currency} from './model/Currency';
+import {Currency, CurrencyKeys} from './model/Currency';
 import {Network} from './model/Network';
 import {Assets, Token} from './model/tokens';
 import {Blockchain, Blockchains} from './model/blockchains';
@@ -13,8 +13,6 @@ import {
   sameMoney,
   toMoneyString
 } from './model/money';
-import {Erc20ABI} from './model/abi/Erc20ABI';
-import {SubscriptionABI} from './model/abi/SubscriptionABI';
 import {Invoice, InvoiceStatus} from './model/invoice';
 import {
   SubscriptionPlan,
@@ -26,9 +24,12 @@ import {
   SubscriptionChargeStatus,
 } from './model/subscription';
 import * as util from './util';
+import * as urls from './urls';
+import * as abi from './model/abi';
 
 export {
   Currency,
+  CurrencyKeys,
   Network,
   Assets,
   Token,
@@ -38,8 +39,6 @@ export {
   parseMoney,
   sameMoney,
   toMoneyString,
-  Erc20ABI,
-  SubscriptionABI,
   Invoice,
   InvoiceStatus,
   SubscriptionPlan,
@@ -50,4 +49,6 @@ export {
   SubscriptionCharge,
   SubscriptionChargeStatus,
   util,
+  urls,
+  abi,
 }
