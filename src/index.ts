@@ -13,8 +13,6 @@ import {
   sameMoney,
   toMoneyString
 } from './model/money';
-import {Erc20ABI} from './model/abi/Erc20ABI';
-import {SubscriptionABI} from './model/abi/SubscriptionABI';
 import {Invoice, InvoiceStatus} from './model/invoice';
 import {
   SubscriptionPlan,
@@ -27,6 +25,7 @@ import {
 } from './model/subscription';
 import * as util from './util';
 import * as urls from './urls';
+import * as abi from './model/abi';
 
 export {
   Currency,
@@ -40,8 +39,6 @@ export {
   parseMoney,
   sameMoney,
   toMoneyString,
-  Erc20ABI,
-  SubscriptionABI,
   Invoice,
   InvoiceStatus,
   SubscriptionPlan,
@@ -53,4 +50,5 @@ export {
   SubscriptionChargeStatus,
   util,
   urls,
+  abi,
 }
