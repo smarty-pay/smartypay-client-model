@@ -18,3 +18,11 @@ export type AnyFunc = (...args: any[])=>void;
 export function makeError(prefix: string, ...args: any[]){
   return new Error(`${prefix}: ${args.join(' ')}`);
 }
+
+export function waitTimeout(ms: number){
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve(undefined);
+    }, ms)
+  });
+}
