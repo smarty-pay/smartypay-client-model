@@ -3,11 +3,13 @@
   @author Evgeny Dolganov <evgenij.dolganov@gmail.com>
 */
 
-import {ListenersMap} from './ListenersMap';
+import {ListenersMap, Event, EventListener} from './ListenersMap';
 import {KeysOfType} from './KeysOfType';
 
 export {
   ListenersMap,
+  Event,
+  EventListener,
   KeysOfType,
 };
 

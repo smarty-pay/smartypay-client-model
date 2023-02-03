@@ -26,6 +26,7 @@ import {
   SubscriptionChargeStatus,
 } from './model/subscription';
 import * as util from './util';
+import * as urls from './urls';
 
 export {
   Currency,
@@ -51,4 +52,5 @@ export {
   SubscriptionCharge,
   SubscriptionChargeStatus,
   util,
+  urls,
 }
