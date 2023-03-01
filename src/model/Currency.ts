@@ -21,6 +21,12 @@ export const CurrencyKeys = <const>[
   'aUSDT',
   'atUSDC',
   'atUSDT',
+  // ethereum
+  'USDT',
+  'USDC',
+  'DAI',
+  'gUSDT',
+  'gUSDC',
 ];
 
 export type Currency = typeof CurrencyKeys[number];

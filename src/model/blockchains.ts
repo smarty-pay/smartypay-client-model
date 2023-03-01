@@ -37,7 +37,7 @@ export const Blockchains: Record<Network, Blockchain> = {
     chainIdHex: '0x89',
     rpc: 'https://polygon-rpc.com',
     explorer: 'https://polygonscan.com',
-    chainName: 'Matic Mainnet',
+    chainName: 'Polygon Mainnet',
     native: 'MATIC',
   },
   PolygonMumbaiNet: {
@@ -45,7 +45,7 @@ export const Blockchains: Record<Network, Blockchain> = {
     chainIdHex: '0x13881',
     rpc: 'https://rpc-mumbai.matic.today',
     explorer: 'https://mumbai.polygonscan.com',
-    chainName: 'Matic Testnet',
+    chainName: 'Polygon Testnet',
     native: 'MATIC',
   },
   ArbitrumMainNet: {
@@ -64,4 +64,20 @@ export const Blockchains: Record<Network, Blockchain> = {
     chainName: 'Arbitrum Testnet',
     native: 'ETH',
   },
+  EthereumMainNet: {
+    chainId: 1,
+    chainIdHex: '0x1',
+    rpc: 'https://rpc.ankr.com/eth',
+    explorer: 'https://etherscan.io',
+    chainName: 'Ethereum Mainnet',
+    native: 'ETH',
+  },
+  EthereumGoerli: {
+    chainId: 5,
+    chainIdHex: '0x5',
+    rpc: 'https://eth-goerli.public.blastapi.io',
+    explorer: 'https://goerli.etherscan.io',
+    chainName: 'Ethereum Goerli',
+    native: 'ETH',
+  }
 }
