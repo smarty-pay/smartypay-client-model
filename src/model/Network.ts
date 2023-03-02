@@ -9,4 +9,6 @@ export type Network =
   | 'PolygonMainNet'
   | 'PolygonMumbaiNet'
   | 'ArbitrumMainNet'
-  | 'ArbitrumTestNet';
+  | 'ArbitrumTestNet'
+  | 'EthereumMainNet'
+  | 'EthereumGoerli';

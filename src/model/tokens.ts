@@ -96,5 +96,37 @@ export const Assets: Record<Exclude<Currency, 'UNKNOWN'>, Token> = {
     tokenId: '0x3668789EDa9D053Ee8B77653dA167CD73e6ef8fa',
     abbr: 'USDC',
     decimals: 18,
+  },
+  // EthereumMainNet
+  USDT: {
+    network: 'EthereumMainNet',
+    tokenId: '0xdac17f958d2ee523a2206206994597c13d831ec7',
+    abbr: 'USDT',
+    decimals: 6,
+  },
+  USDC: {
+    network: 'EthereumMainNet',
+    tokenId: '0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48',
+    abbr: 'USDC',
+    decimals: 6,
+  },
+  DAI: {
+    network: 'EthereumMainNet',
+    tokenId: '0x6B175474E89094C44Da98b954EedeAC495271d0F',
+    abbr: 'DAI',
+    decimals: 18,
+  },
+  // EthereumGoerli
+  gUSDT: {
+    network: 'EthereumGoerli',
+    tokenId: '0xfea7812643e0404a718018172a8bfe0db35bc745',
+    abbr: 'USDT',
+    decimals: 18,
+  },
+  gUSDC: {
+    network: 'EthereumGoerli',
+    tokenId: '0x2b11e7b5efe158d08c52a4fa400e07d8fd6a43ec',
+    abbr: 'USDC',
+    decimals: 18,
   }
 }
