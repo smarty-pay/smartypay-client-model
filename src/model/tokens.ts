@@ -119,13 +119,13 @@ export const Assets: Record<Exclude<Currency, 'UNKNOWN'>, Token> = {
   // EthereumGoerli
   gUSDT: {
     network: 'EthereumGoerli',
-    tokenId: 'todo', // TODO
+    tokenId: '0xfea7812643e0404a718018172a8bfe0db35bc745',
     abbr: 'USDT',
     decimals: 18,
   },
   gUSDC: {
     network: 'EthereumGoerli',
-    tokenId: 'todo', // TODO
+    tokenId: '0x2b11e7b5efe158d08c52a4fa400e07d8fd6a43ec',
     abbr: 'USDC',
     decimals: 18,
   }
