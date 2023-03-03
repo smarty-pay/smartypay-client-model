@@ -43,7 +43,7 @@ export const Blockchains: Record<Network, Blockchain> = {
   PolygonMumbaiNet: {
     chainId: 80001,
     chainIdHex: '0x13881',
-    rpc: 'https://rpc-mumbai.matic.today',
+    rpc: 'https://polygon-testnet.public.blastapi.io',
     explorer: 'https://mumbai.polygonscan.com',
     chainName: 'Polygon Testnet',
     native: 'MATIC',
