@@ -13,7 +13,12 @@ import {
   sameMoney,
   toMoneyString
 } from './model/money';
-import {Invoice, InvoiceStatus} from './model/invoice';
+import {
+  Invoice,
+  InvoiceStatus,
+  isSuccessStatus,
+  isFailedStatus,
+} from './model/invoice';
 import {
   SubscriptionPlan,
   SubscriptionPlanStatus,
@@ -41,6 +46,8 @@ export {
   toMoneyString,
   Invoice,
   InvoiceStatus,
+  isSuccessStatus,
+  isFailedStatus,
   SubscriptionPlan,
   SubscriptionPlanStatus,
   Subscription,

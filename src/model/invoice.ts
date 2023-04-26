@@ -23,9 +23,25 @@ export interface Invoice {
 
 export type InvoiceStatus =
   'Created'
+  | 'Confirming'
   | 'Paid'
-  | 'Confirmed'
+  | 'SimplePaid'
   | 'OverPaid'
   | 'UnderPaid'
   | 'Expired'
-  | 'Invalid';
+  | 'Invalid'
+  | 'Withdrawn';
+
+
+export function isSuccessStatus(status: InvoiceStatus): boolean {
+  return status === 'Paid'
+    || status === 'SimplePaid'
+    || status === 'Withdrawn';
+}
+
+export function isFailedStatus(status: InvoiceStatus): boolean {
+  return status === 'OverPaid'
+    || status === 'UnderPaid'
+    || status === 'Expired'
+    || status === 'Invalid';
+}
