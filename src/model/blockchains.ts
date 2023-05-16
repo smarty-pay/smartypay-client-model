@@ -27,7 +27,7 @@ export const Blockchains: Record<Network, Blockchain> = {
   BinanceTestNet: {
     chainId: 97,
     chainIdHex: '0x61',
-    rpc: 'https://data-seed-prebsc-1-s3.binance.org:8545',
+    rpc: 'https://data-seed-prebsc-1-s1.binance.org:8545',
     explorer: 'https://testnet.bscscan.com',
     chainName: 'Binance Smart Chain Testnet',
     native: 'BNB',
