@@ -19,6 +19,13 @@ export function makeError(prefix: string, ...args: any[]){
   return new Error(`${prefix}: ${args.join(' ')}`);
 }
 
+export function errorCtx(error: any, ctx: any): Error {
+  Object.entries(ctx).forEach(([key, value])=>{
+    error[key] = value;
+  });
+  return error;
+}
+
 export function waitTimeout(ms: number){
   return new Promise((resolve) => {
     setTimeout(() => {

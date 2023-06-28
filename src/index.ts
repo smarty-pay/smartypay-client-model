@@ -5,7 +5,7 @@
 
 import {Currency, CurrencyKeys} from './model/Currency';
 import {Network} from './model/Network';
-import {Assets, Token} from './model/tokens';
+import {Assets, Token, getTokenByCurrency, getAmountWithTokenLabel} from './model/tokens';
 import {Blockchain, Blockchains} from './model/blockchains';
 import {
   Money,
@@ -38,6 +38,8 @@ export {
   Network,
   Assets,
   Token,
+  getTokenByCurrency,
+  getAmountWithTokenLabel,
   Blockchain,
   Blockchains,
   Money,
