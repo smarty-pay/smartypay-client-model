@@ -3,7 +3,7 @@
   @author Evgeny Dolganov <evgenij.dolganov@gmail.com>
 */
 import {Network} from './Network';
-import {Currency} from './Currency';
+import {Currency, CurrencyKeys} from './Currency';
 
 export interface Token {
   network: Network,
@@ -129,4 +129,19 @@ export const Assets: Record<Exclude<Currency, 'UNKNOWN'>, Token> = {
     abbr: 'USDC',
     decimals: 6,
   }
+}
+
+
+export function getTokenByCurrency(currency: any): Token {
+  const found = CurrencyKeys.find(c => c === currency);
+  if( ! found || found === 'UNKNOWN'){
+    throw new Error(`unknown token for currency "${currency}"`);
+  }
+  return Assets[found];
+}
+
+export function getAmountWithTokenLabel(amountWithToken: string): string {
+  const [amount, asset] = amountWithToken.split(' ');
+  const token = getTokenByCurrency(asset);
+  return `${amount} ${token.abbr}`;
 }

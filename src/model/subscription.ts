@@ -10,6 +10,7 @@ import {Network} from './Network';
 export interface SubscriptionPlan {
   id: string,
   companyId: number,
+  name?: string,
   description: string,
   amount: string,
   periodSeconds: number,
@@ -35,6 +36,7 @@ export interface Subscription {
   createdAt: string,
   metadata?: string,
   status: SubscriptionStatus,
+  allowance: string,
 }
 
 export type SubscriptionStatus =
