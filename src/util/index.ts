@@ -33,3 +33,7 @@ export function waitTimeout(ms: number){
     }, ms)
   });
 }
+
+export function isNode(){
+  return typeof window === 'undefined';
+}
