@@ -85,15 +85,15 @@ export const Assets: Record<Exclude<Currency, 'UNKNOWN'>, Token> = {
     decimals: 6,
   },
   // ArbitrumTestNet
-  atUSDT: {
-    network: 'ArbitrumTestNet',
-    tokenId: '0x4D126f75891e779021187f55314F95BE1D19e7ff',
+  asUSDT: {
+    network: 'ArbitrumSepolia',
+    tokenId: '0xb752D5d6Ad566b3720D8CD374BDA68A16D0c68d0',
     abbr: 'USDT',
     decimals: 18,
   },
-  atUSDC: {
-    network: 'ArbitrumTestNet',
-    tokenId: '0x3668789EDa9D053Ee8B77653dA167CD73e6ef8fa',
+  asUSDC: {
+    network: 'ArbitrumSepolia',
+    tokenId: '0x5aA0B22E1A2a380350f236D2E6183DA3d7404C91',
     abbr: 'USDC',
     decimals: 18,
   },
@@ -117,17 +117,17 @@ export const Assets: Record<Exclude<Currency, 'UNKNOWN'>, Token> = {
     decimals: 18,
   },
   // EthereumGoerli
-  gUSDT: {
-    network: 'EthereumGoerli',
-    tokenId: '0xfea7812643e0404a718018172a8bfe0db35bc745',
+  sUSDT: {
+    network: 'EthereumSepolia',
+    tokenId: '0x8B076B0F6F7fb47d88B4F90FA048D146a2407Df4',
     abbr: 'USDT',
-    decimals: 6,
+    decimals: 18,
   },
-  gUSDC: {
-    network: 'EthereumGoerli',
-    tokenId: '0x2b11e7b5efe158d08c52a4fa400e07d8fd6a43ec',
+  sUSDC: {
+    network: 'EthereumSepolia',
+    tokenId: '0xcfaF00fcb99607a46Ead9796Aa2EC66A1DE714C3',
     abbr: 'USDC',
-    decimals: 6,
+    decimals: 18,
   }
 }
 

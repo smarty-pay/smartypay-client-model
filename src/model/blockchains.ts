@@ -56,12 +56,12 @@ export const Blockchains: Record<Network, Blockchain> = {
     chainName: 'Arbitrum Mainnet',
     native: 'ETH',
   },
-  ArbitrumTestNet: {
-    chainId: 421613,
-    chainIdHex: '0x66eed',
-    rpc: 'https://goerli-rollup.arbitrum.io/rpc',
-    explorer: 'https://testnet.arbiscan.io',
-    chainName: 'Arbitrum Testnet',
+  ArbitrumSepolia: {
+    chainId: 421614,
+    chainIdHex: '0x66eee',
+    rpc: 'https://sepolia-rollup.arbitrum.io/rpc',
+    explorer: 'https://sepolia.arbiscan.io',
+    chainName: 'Arbitrum Sepolia',
     native: 'ETH',
   },
   EthereumMainNet: {
@@ -72,12 +72,12 @@ export const Blockchains: Record<Network, Blockchain> = {
     chainName: 'Ethereum Mainnet',
     native: 'ETH',
   },
-  EthereumGoerli: {
-    chainId: 5,
-    chainIdHex: '0x5',
-    rpc: 'https://eth-goerli.public.blastapi.io',
-    explorer: 'https://goerli.etherscan.io',
-    chainName: 'Ethereum Goerli',
+  EthereumSepolia: {
+    chainId: 11155111,
+    chainIdHex: '0xaa36a7',
+    rpc: 'https://rpc2.sepolia.org',
+    explorer: 'https://sepolia.etherscan.io',
+    chainName: 'Ethereum Sepolia',
     native: 'ETH',
   }
 }

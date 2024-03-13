@@ -19,14 +19,14 @@ export const CurrencyKeys = <const>[
   // arbitrum
   'aUSDC',
   'aUSDT',
-  'atUSDC',
-  'atUSDT',
+  'asUSDC',
+  'asUSDT',
   // ethereum
   'USDT',
   'USDC',
   'DAI',
-  'gUSDT',
-  'gUSDC',
+  'sUSDT',
+  'sUSDC',
 ];
 
 export type Currency = typeof CurrencyKeys[number];
