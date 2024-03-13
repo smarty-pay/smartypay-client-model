@@ -116,7 +116,7 @@ export const Assets: Record<Exclude<Currency, 'UNKNOWN'>, Token> = {
     abbr: 'DAI',
     decimals: 18,
   },
-  // EthereumGoerli
+  // EthereumSepolia
   sUSDT: {
     network: 'EthereumSepolia',
     tokenId: '0x8B076B0F6F7fb47d88B4F90FA048D146a2407Df4',

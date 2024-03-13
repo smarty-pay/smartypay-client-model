@@ -75,7 +75,7 @@ export const Blockchains: Record<Network, Blockchain> = {
   EthereumSepolia: {
     chainId: 11155111,
     chainIdHex: '0xaa36a7',
-    rpc: 'https://rpc2.sepolia.org',
+    rpc: 'https://ethereum-sepolia-rpc.publicnode.com',
     explorer: 'https://sepolia.etherscan.io',
     chainName: 'Ethereum Sepolia',
     native: 'ETH',
