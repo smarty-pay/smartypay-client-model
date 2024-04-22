@@ -14,8 +14,8 @@ export const CurrencyKeys = <const>[
   // polygon
   'pUSDC',
   'pUSDT',
-  'pmUSDC',
-  'pmUSDT',
+  'paUSDC',
+  'paUSDT',
   // arbitrum
   'aUSDC',
   'aUSDT',

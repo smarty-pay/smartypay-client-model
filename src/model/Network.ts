@@ -7,7 +7,7 @@ export type Network =
   | 'BinanceMainNet'
   | 'BinanceTestNet'
   | 'PolygonMainNet'
-  | 'PolygonMumbaiNet'
+  | 'PolygonAmoy'
   | 'ArbitrumMainNet'
   | 'ArbitrumSepolia'
   | 'EthereumMainNet'

@@ -40,12 +40,12 @@ export const Blockchains: Record<Network, Blockchain> = {
     chainName: 'Polygon Mainnet',
     native: 'MATIC',
   },
-  PolygonMumbaiNet: {
-    chainId: 80001,
-    chainIdHex: '0x13881',
-    rpc: 'https://polygon-testnet.public.blastapi.io',
-    explorer: 'https://mumbai.polygonscan.com',
-    chainName: 'Polygon Testnet',
+  PolygonAmoy: {
+    chainId: 80002,
+    chainIdHex: '0x13882',
+    rpc: 'https://rpc-amoy.polygon.technology',
+    explorer: 'https://amoy.polygonscan.com',
+    chainName: 'Polygon Amoy Testnet',
     native: 'MATIC',
   },
   ArbitrumMainNet: {

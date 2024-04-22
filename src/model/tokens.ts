@@ -58,16 +58,16 @@ export const Assets: Record<Exclude<Currency, 'UNKNOWN'>, Token> = {
     abbr: 'USDT',
     decimals: 6,
   },
-  // PolygonMumbaiNet
-  pmUSDC: {
-    network: 'PolygonMumbaiNet',
-    tokenId: '0x7A7707cEE9bbF4D2Ce8f227865D456164841e4E5',
+  // PolygonAmoy
+  paUSDC: {
+    network: 'PolygonAmoy',
+    tokenId: '0x5aA0B22E1A2a380350f236D2E6183DA3d7404C91',
     abbr: 'USDC',
     decimals: 18,
   },
-  pmUSDT: {
-    network: 'PolygonMumbaiNet',
-    tokenId: '0x9b3273282f3b68dbF9b2c35f784cB1a012Cd670B',
+  paUSDT: {
+    network: 'PolygonAmoy',
+    tokenId: '0xb752D5d6Ad566b3720D8CD374BDA68A16D0c68d0',
     abbr: 'USDT',
     decimals: 18,
   },
