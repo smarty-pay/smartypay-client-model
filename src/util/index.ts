@@ -4,10 +4,12 @@
 */
 
 import { Event, EventListener, ListenersMap } from './listenersMap';
+import { withSingleCall } from './promise/withSingleCall';
 import { CacheItem, SimpleTtlCache } from './simpleTtlCache';
 
 export { ListenersMap, Event, EventListener };
 export { SimpleTtlCache, CacheItem };
+export { withSingleCall };
 
 export type AnyFunc = (...args: any[]) => void;
 

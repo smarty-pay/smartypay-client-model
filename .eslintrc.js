@@ -16,6 +16,8 @@ module.exports = {
     'prettier',
   ],
   rules: {
+    '@typescript-eslint/no-unsafe-return': 'off',
+    'no-plusplus': 'off',
     '@typescript-eslint/ban-tslint-comment': 'off', // caused by no way to remove this from generated code
     'object-property-newline': [
       'error',
@@ -40,7 +42,7 @@ module.exports = {
     '@typescript-eslint/interface-name-prefix': 'off',
     '@typescript-eslint/explicit-function-return-type': 'off',
     '@typescript-eslint/no-explicit-any': 'off',
-    'no-console': ['error', { allow: ['warn', 'error'] }],
+    'no-console': ['error', { allow: ['warn', 'error', 'info', 'log'] }],
     'import/order': [
       'error',
       {

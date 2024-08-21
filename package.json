@@ -1,6 +1,6 @@
 {
   "name": "smartypay-client-model",
-  "version": "2.31.0",
+  "version": "2.32.0",
   "description": "SMARTy Pay common model types",
   "author": "Evgeny Dolganov <evgenij.dolganov@gmail.com>",
   "repository": {
