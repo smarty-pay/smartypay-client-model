@@ -3,9 +3,9 @@
   @author Evgeny Dolganov <evgenij.dolganov@gmail.com>
 */
 
-import { ListenersMap } from './ListenersMap';
+import { ListenersMap } from './index';
 
-import type { Event } from './ListenersMap';
+import type { Event } from './index';
 
 describe('ListenersMap', () => {
   const key1 = 'key1';

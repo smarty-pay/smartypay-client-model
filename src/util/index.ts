@@ -3,9 +3,11 @@
   @author Evgeny Dolganov <evgenij.dolganov@gmail.com>
 */
 
-import { Event, EventListener, ListenersMap } from './ListenersMap';
+import { Event, EventListener, ListenersMap } from './listenersMap';
+import { CacheItem, SimpleTtlCache } from './simpleTtlCache';
 
 export { ListenersMap, Event, EventListener };
+export { SimpleTtlCache, CacheItem };
 
 export type AnyFunc = (...args: any[]) => void;
 
