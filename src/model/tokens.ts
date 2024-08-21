@@ -2,14 +2,16 @@
   SMARTy Pay Client Model
   @author Evgeny Dolganov <evgenij.dolganov@gmail.com>
 */
-import {Network} from './Network';
-import {Currency, CurrencyKeys} from './Currency';
+import { CurrencyKeys } from './Currency';
+
+import type { Currency } from './Currency';
+import type { Network } from './Network';
 
 export interface Token {
-  network: Network,
-  tokenId: string,
-  abbr: string,
-  decimals: number,
+  network: Network;
+  tokenId: string;
+  abbr: string;
+  decimals: number;
 }
 
 export const Assets: Record<Exclude<Currency, 'UNKNOWN'>, Token> = {
@@ -128,13 +130,12 @@ export const Assets: Record<Exclude<Currency, 'UNKNOWN'>, Token> = {
     tokenId: '0xcfaF00fcb99607a46Ead9796Aa2EC66A1DE714C3',
     abbr: 'USDC',
     decimals: 18,
-  }
-}
-
+  },
+};
 
 export function getTokenByCurrency(currency: any): Token {
-  const found = CurrencyKeys.find(c => c === currency);
-  if( ! found || found === 'UNKNOWN'){
+  const found = CurrencyKeys.find((c) => c === currency);
+  if (!found || found === 'UNKNOWN') {
     throw new Error(`unknown token for currency "${currency}"`);
   }
   return Assets[found];

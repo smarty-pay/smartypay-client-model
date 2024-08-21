@@ -3,16 +3,16 @@
   @author Evgeny Dolganov <evgenij.dolganov@gmail.com>
 */
 
-import {Currency, CurrencyKeys} from './model/Currency';
-import {Network} from './model/Network';
-import {Assets, Token, getTokenByCurrency, getAmountWithTokenLabel} from './model/tokens';
+import * as abi from './model/abi';
 import {Blockchain, Blockchains} from './model/blockchains';
+import {Currency, CurrencyKeys} from './model/Currency';
 import {
   Money,
   parseMoney,
   sameMoney,
   toMoneyString
 } from './model/money';
+import {Network} from './model/Network';
 import {
   Payment,
   PaymentStatus,
@@ -28,9 +28,9 @@ import {
   SubscriptionCharge,
   SubscriptionChargeStatus,
 } from './model/subscription';
-import * as util from './util';
+import {Assets, Token, getTokenByCurrency, getAmountWithTokenLabel} from './model/tokens';
 import * as urls from './urls';
-import * as abi from './model/abi';
+import * as util from './util';
 
 export {
   Currency,

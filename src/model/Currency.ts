@@ -3,7 +3,7 @@
   @author Evgeny Dolganov <evgenij.dolganov@gmail.com>
 */
 
-export const CurrencyKeys = <const>[
+export const CurrencyKeys = [
   'UNKNOWN',
   // binance
   'bBUSD',
@@ -27,6 +27,6 @@ export const CurrencyKeys = <const>[
   'DAI',
   'sUSDT',
   'sUSDC',
-];
+] as const;
 
-export type Currency = typeof CurrencyKeys[number];
+export type Currency = (typeof CurrencyKeys)[number];

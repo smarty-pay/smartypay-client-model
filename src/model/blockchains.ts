@@ -3,19 +3,18 @@
   @author Evgeny Dolganov <evgenij.dolganov@gmail.com>
 */
 
-import {Network} from './Network';
+import type { Network } from './Network';
 
 export interface Blockchain {
-  chainId: number,
-  chainIdHex: string,
-  rpc: string,
-  explorer: string,
-  chainName: string,
-  native: string,
+  chainId: number;
+  chainIdHex: string;
+  rpc: string;
+  explorer: string;
+  chainName: string;
+  native: string;
 }
 
 export const Blockchains: Record<Network, Blockchain> = {
-
   BinanceMainNet: {
     chainId: 56,
     chainIdHex: '0x38',
@@ -79,5 +78,5 @@ export const Blockchains: Record<Network, Blockchain> = {
     explorer: 'https://sepolia.etherscan.io',
     chainName: 'Ethereum Sepolia',
     native: 'ETH',
-  }
-}
+  },
+};
