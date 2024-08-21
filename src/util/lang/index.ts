@@ -1,3 +1,8 @@
+/*
+  SMARTy Pay Client Model
+  @author Evgeny Dolganov <evgenij.dolganov@gmail.com>
+*/
+
 export { isArray } from './isArray';
 export { isBigint } from './isBigint';
 export { isBlank } from './isBlank';

@@ -9,6 +9,7 @@ export { Event, EventListener, ListenersMap } from './listenersMap';
 
 export * as bigMath from './bigMath';
 export * as lang from './lang';
+export * as hex from './hex';
 
 export type AnyFunc = (...args: any[]) => void;
 
@@ -17,12 +18,10 @@ export function makeError(prefix: string, ...args: any[]) {
 }
 
 export function errorCtx(error: any, ctx: any): Error {
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
   Object.entries(ctx).forEach(([key, value]) => {
-    // eslint-disable-next-line no-param-reassign,@typescript-eslint/no-unsafe-member-access
+    // eslint-disable-next-line no-param-reassign
     error[key] = value;
   });
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-return
   return error;
 }
 

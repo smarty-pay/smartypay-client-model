@@ -1,3 +1,8 @@
+/*
+  SMARTy Pay Client Model
+  @author Evgeny Dolganov <evgenij.dolganov@gmail.com>
+*/
+
 export { BigNumLike } from './BigNumLike';
 export { ceil, ceilImpl } from './ceil';
 export { isEqualTo } from './isEqualTo';
