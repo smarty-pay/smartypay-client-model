@@ -14,11 +14,11 @@ import {
   toMoneyString
 } from './model/money';
 import {
-  Invoice,
-  InvoiceStatus,
+  Payment,
+  PaymentStatus,
   isSuccessStatus,
   isFailedStatus,
-} from './model/invoice';
+} from './model/payment';
 import {
   SubscriptionPlan,
   SubscriptionPlanStatus,
@@ -46,8 +46,8 @@ export {
   parseMoney,
   sameMoney,
   toMoneyString,
-  Invoice,
-  InvoiceStatus,
+  Payment,
+  PaymentStatus,
   isSuccessStatus,
   isFailedStatus,
   SubscriptionPlan,

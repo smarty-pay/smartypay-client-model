@@ -4,12 +4,12 @@
 */
 
 
-export interface Invoice {
+export interface Payment {
   id: string,
   companyId: number,
   paymentAddress: string,
   amount: string,
-  status: InvoiceStatus,
+  status: PaymentStatus,
   createdAt: Date,
   expiresAt: Date,
   paidAt?: Date | null,
@@ -21,7 +21,7 @@ export interface Invoice {
 }
 
 
-export type InvoiceStatus =
+export type PaymentStatus =
   'Created'
   | 'Confirming'
   | 'Paid'
@@ -33,13 +33,13 @@ export type InvoiceStatus =
   | 'Withdrawn';
 
 
-export function isSuccessStatus(status: InvoiceStatus): boolean {
+export function isSuccessStatus(status: PaymentStatus): boolean {
   return status === 'Paid'
     || status === 'SimplePaid'
     || status === 'Withdrawn';
 }
 
-export function isFailedStatus(status: InvoiceStatus): boolean {
+export function isFailedStatus(status: PaymentStatus): boolean {
   return status === 'OverPaid'
     || status === 'UnderPaid'
     || status === 'Expired'
