@@ -3,13 +3,12 @@
   @author Evgeny Dolganov <evgenij.dolganov@gmail.com>
 */
 
-import { Event, EventListener, ListenersMap } from './listenersMap';
-import { withSingleCall } from './promise/withSingleCall';
-import { CacheItem, SimpleTtlCache } from './simpleTtlCache';
+export { CacheItem, SimpleTtlCache } from './simpleTtlCache';
+export { withSingleCall } from './promise/withSingleCall';
+export { Event, EventListener, ListenersMap } from './listenersMap';
 
-export { ListenersMap, Event, EventListener };
-export { SimpleTtlCache, CacheItem };
-export { withSingleCall };
+export * as bigMath from './bigMath';
+export * as lang from './lang';
 
 export type AnyFunc = (...args: any[]) => void;
 

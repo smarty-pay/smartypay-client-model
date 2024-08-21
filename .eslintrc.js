@@ -16,6 +16,12 @@ module.exports = {
     'prettier',
   ],
   rules: {
+    '@typescript-eslint/no-use-before-define': 'off',
+    '@typescript-eslint/no-unsafe-assignment': 'off',
+    '@typescript-eslint/no-unsafe-member-access': 'off',
+    '@typescript-eslint/no-unsafe-call': 'off',
+    '@typescript-eslint/no-unsafe-argument': 'off',
+    '@typescript-eslint/no-redundant-type-constituents': 'off',
     '@typescript-eslint/no-unsafe-return': 'off',
     'no-plusplus': 'off',
     '@typescript-eslint/ban-tslint-comment': 'off', // caused by no way to remove this from generated code
