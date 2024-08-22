@@ -3,61 +3,24 @@
   @author Evgeny Dolganov <evgenij.dolganov@gmail.com>
 */
 
-import * as abi from './model/abi';
-import {Blockchain, Blockchains} from './model/blockchains';
-import {Currency, CurrencyKeys} from './model/Currency';
-import {
-  Money,
-  parseMoney,
-  sameMoney,
-  toMoneyString
-} from './model/money';
-import {Network} from './model/Network';
-import {
-  Payment,
-  PaymentStatus,
-  isSuccessStatus,
-  isFailedStatus,
-} from './model/payment';
-import {
-  SubscriptionPlan,
-  SubscriptionPlanStatus,
-  Subscription,
-  SubscriptionStatus,
-  SubscriptionId,
-  SubscriptionCharge,
-  SubscriptionChargeStatus,
-} from './model/subscription';
-import {Assets, Token, getTokenByCurrency, getAmountWithTokenLabel} from './model/tokens';
-import * as urls from './urls';
-import * as util from './util';
+export * as abi from './model/abi';
+export { Blockchain, Blockchains } from './model/blockchains';
+export { Currency, CurrencyKeys } from './model/Currency';
+export { Money, parseMoney, sameMoney, toMoneyString } from './model/money';
+export { Network } from './model/Network';
+
+export { isFailedStatus, isSuccessStatus, normalizePayment, Payment, PaymentStatus } from './model/payment';
 
 export {
-  Currency,
-  CurrencyKeys,
-  Network,
-  Assets,
-  Token,
-  getTokenByCurrency,
-  getAmountWithTokenLabel,
-  Blockchain,
-  Blockchains,
-  Money,
-  parseMoney,
-  sameMoney,
-  toMoneyString,
-  Payment,
-  PaymentStatus,
-  isSuccessStatus,
-  isFailedStatus,
-  SubscriptionPlan,
-  SubscriptionPlanStatus,
   Subscription,
-  SubscriptionStatus,
-  SubscriptionId,
   SubscriptionCharge,
   SubscriptionChargeStatus,
-  util,
-  urls,
-  abi,
-}
+  SubscriptionId,
+  SubscriptionPlan,
+  SubscriptionPlanStatus,
+  SubscriptionStatus,
+} from './model/subscription';
+
+export { Assets, getAmountWithTokenLabel, getTokenByCurrency, Token } from './model/tokens';
+export * as urls from './urls';
+export * as util from './util';
