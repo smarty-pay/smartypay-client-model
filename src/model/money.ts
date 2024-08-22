@@ -8,17 +8,17 @@ import { CurrencyKeys } from './Currency';
 import type { Currency } from './Currency';
 
 export interface Money {
-  amount: string;
+  value: string;
   currency: Currency;
 }
 
 export function sameMoney(a?: Money, b?: Money) {
-  return a && b && a.amount === b.amount && a.currency === b.currency;
+  return a && b && a.value === b.value && a.currency === b.currency;
 }
 
 /** {amount: 100, currency: "USD"} -> "100 USD" */
 export function toMoneyString(money: Money) {
-  return `${money.amount} ${money.currency}`;
+  return `${money.value} ${money.currency}`;
 }
 
 /** "1.5 USD" -> {amount: 1.5, currency: "USD"} */
@@ -29,6 +29,6 @@ export function parseMoney(value: string | Money): Money {
 
   return {
     currency: CurrencyKeys.find((c) => c === currency) || 'UNKNOWN',
-    amount: amount.trim(),
+    value: amount.trim(),
   };
 }
