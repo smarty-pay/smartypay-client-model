@@ -11,6 +11,7 @@ export interface Token {
   network: Network;
   tokenId: string;
   abbr: string;
+  symbol?: string;
   decimals: number;
 }
 
@@ -45,6 +46,7 @@ export const Assets: Record<Exclude<Currency, 'UNKNOWN'>, Token> = {
     network: 'BinanceTestNet',
     tokenId: '0x3f43f5812c6e57a7c9ccb9cdc03104d1d907cd09',
     abbr: 'USDT',
+    symbol: 'USDTv2',
     decimals: 18,
   },
   // PolygonMainNet
