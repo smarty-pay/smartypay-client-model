@@ -1,5 +1,5 @@
 /*
-  SMARTy Pay Client Model
+  Smarty Pay Client Model
   @author Evgeny Dolganov <evgenij.dolganov@gmail.com>
 */
 import type BigNumber from 'bignumber.js';

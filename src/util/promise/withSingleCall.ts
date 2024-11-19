@@ -1,3 +1,8 @@
+/*
+  Smarty Pay Client Model
+  @author Evgeny Dolganov <evgenij.dolganov@gmail.com>
+*/
+
 interface SingleCall {
   listenersCount: number;
   promise: Promise<any>;
