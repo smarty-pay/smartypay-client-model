@@ -49,6 +49,18 @@ export const Assets: Record<Exclude<Currency, 'UNKNOWN'>, Token> = {
     symbol: 'USDTv2',
     decimals: 18,
   },
+  btUSDT: {
+    network: 'BinanceTestNet',
+    tokenId: '0x7490a7aC9470AF026Fd607cB697143E6E93438e4',
+    abbr: 'SUSDT',
+    decimals: 18,
+  },
+  btUSDC: {
+    network: 'BinanceTestNet',
+    tokenId: '0x0546e4b1ccf4a58bf448F230D383059CFCE942f2',
+    abbr: 'SUSDC',
+    decimals: 18,
+  },
   // PolygonMainNet
   pUSDC: {
     network: 'PolygonMainNet',
@@ -102,32 +114,32 @@ export const Assets: Record<Exclude<Currency, 'UNKNOWN'>, Token> = {
     decimals: 18,
   },
   // EthereumMainNet
-  USDT: {
+  eUSDT: {
     network: 'EthereumMainNet',
     tokenId: '0xdac17f958d2ee523a2206206994597c13d831ec7',
     abbr: 'USDT',
     decimals: 6,
   },
-  USDC: {
+  eUSDC: {
     network: 'EthereumMainNet',
     tokenId: '0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48',
     abbr: 'USDC',
     decimals: 6,
   },
-  DAI: {
+  eDAI: {
     network: 'EthereumMainNet',
     tokenId: '0x6B175474E89094C44Da98b954EedeAC495271d0F',
     abbr: 'DAI',
     decimals: 18,
   },
   // EthereumSepolia
-  sUSDT: {
+  esUSDT: {
     network: 'EthereumSepolia',
     tokenId: '0x8B076B0F6F7fb47d88B4F90FA048D146a2407Df4',
     abbr: 'USDT',
     decimals: 18,
   },
-  sUSDC: {
+  esUSDC: {
     network: 'EthereumSepolia',
     tokenId: '0xcfaF00fcb99607a46Ead9796Aa2EC66A1DE714C3',
     abbr: 'USDC',

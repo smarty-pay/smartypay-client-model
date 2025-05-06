@@ -11,6 +11,8 @@ export const CurrencyKeys = [
   'btMNXe',
   'btUSDTv2',
   'btBUSD',
+  'btUSDT',
+  'btUSDC',
   // polygon
   'pUSDC',
   'pUSDT',
@@ -22,11 +24,11 @@ export const CurrencyKeys = [
   'asUSDC',
   'asUSDT',
   // ethereum
-  'USDT',
-  'USDC',
-  'DAI',
-  'sUSDT',
-  'sUSDC',
+  'eUSDT',
+  'eUSDC',
+  'eDAI',
+  'esUSDT',
+  'esUSDC',
 ] as const;
 
 export type Currency = (typeof CurrencyKeys)[number];
